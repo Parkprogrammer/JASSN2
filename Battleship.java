@@ -1,9 +1,49 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
 public class Battleship {
 	public char[] Rowindex = {'A', 'B', 'C', 'D', 'E', 'F', 'I', 'J'};
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		String fulladdress = "C:\\Users\\user\\eclipse-workspace\\PA2\\src\\";
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("The number of bombs: ");
+		int Nnombs = scan.nextInt();
+		
+		System.out.print(" // Program mode:");
+		String programmode = scan.nextLine();
+		System.out.println();
+		
+		System.out.print("The name of the board input file: ");
+		String fileaddress = scan.nextLine();
+		System.out.println();
+		
+		fulladdress = fulladdress+fileaddress;
+		
+		InputStream fis = new FileInputStream(fulladdress);
+		InputStreamReader isr = new InputStreamReader(fis);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.println(br.readLine());
+		System.out.println(br.readLine());
+		System.out.println(br.readLine());
+		System.out.println(br.readLine());
+		System.out.println(br.readLine());
+		System.out.println(br.readLine());
+		System.out.println(br.readLine());
+		System.out.println(br.readLine());
+		System.out.println(br.readLine());
+		System.out.println(br.readLine());
+		
 		
 	}
+	
+	// public char[][] changetxt()
 	
 	public char[][] outputMap(char[][] inputMap){
 		char[][] returnMap = new char[12][35];
